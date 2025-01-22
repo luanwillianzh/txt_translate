@@ -15,5 +15,5 @@ def index(url: str=""):
     return "Hello World!"
   else:
     txtify = requests.get(f"https://txtify.luanwillianzh04.workers.dev/{url}", headers={"User-Agent": choice(ua)}).text
-    trad = [ i.text for i in t.translate(txtify.split("\n\n"), dest="pt") ]
+    trad = [ i.text.replace("\n", " ") for i in t.translate(txtify.split("\n\n"), dest="pt") ]
     return "\n\n".join(trad)
