@@ -6,7 +6,7 @@ t = Translator()
 app = FastAPI()
 
 @app.get("/")
-def index(url: string=""):
+def index(url: str=""):
   if url == "":
     return "Hello World!"
   else:
